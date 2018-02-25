@@ -1,3 +1,0 @@
-$portalResourceManager.requireResourcesForContext("ucw.helloworld.page")
-
-<p>$!{msg}</p>

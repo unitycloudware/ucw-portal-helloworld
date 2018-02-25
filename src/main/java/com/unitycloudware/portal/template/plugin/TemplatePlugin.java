@@ -1,7 +1,7 @@
 /* Copyright 2017 Unity{Cloud}Ware - UCW Industries Ltd. All rights reserved.
  */
 
-package com.unitycloudware.portal.tutorial.helloworld.plugin;
+package com.unitycloudware.portal.template.plugin;
 
 import java.util.Properties;
 
@@ -12,24 +12,24 @@ import org.nsys.daemon.event.SystemStartedEvent;
 import org.nsys.daemon.plugin.AbstractManagementAgentPlugin;
 import org.nsys.portal.event.PortalStartedEvent;
 
-import com.unitycloudware.portal.tutorial.helloworld.HelloWorldConfig;
+import com.unitycloudware.portal.template.TemplateConfig;
 
 /**
- * Hello World Plugin
+ * Template Plugin
  *
- * @author Tomas Hrdlicka <tomas@hrdlicka.co.uk>
- * @see <a href="http://unitycloudware.com">Unity{Cloud}Ware</a>
+ * @author Author <author@email>
+ * @see <a href="http://some.url">See this</a>
  */
-public class HelloWorldPlugin extends AbstractManagementAgentPlugin {
+public class TemplatePlugin extends AbstractManagementAgentPlugin {
 
     public static final String PORTAL_REDIRECT = "nsys.portal.redirect";
-    public static final String PORTAL_REDIRECT_DEFAULT = "/ucw-helloworld";
+    public static final String PORTAL_REDIRECT_DEFAULT = "/admin";
 
     @Override
     public void load(final PluginContext context) {
         getLog().debugFormat("Starting plugin %s", getName());
 
-        HelloWorldConfig.loadConfig();
+        TemplateConfig.loadConfig();
 
         addComponents();
         scheduleJobs();
@@ -46,9 +46,7 @@ public class HelloWorldPlugin extends AbstractManagementAgentPlugin {
 
             if (event instanceof PortalStartedEvent) {
                 // UCW Portal has been started successfully!
-            }
-
-            else if (event instanceof SystemStartedEvent) {
+            } else if (event instanceof SystemStartedEvent) {
                 configurePortalComponents();
             }
         }

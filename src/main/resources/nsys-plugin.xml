@@ -7,63 +7,14 @@
     <plugin-info>
         <description>${project.description}</description>
         <version>${build.number}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
     </plugin-info>
 
     <!-- Plugin Modules -->
 
-    <management-agent key="ucw-helloworld" name="UCW Hello World"
-                      class="com.unitycloudware.portal.tutorial.helloworld.plugin.HelloWorldPlugin">
+    <management-agent key="template" name="Template"
+                      class="com.unitycloudware.portal.template.plugin.TemplatePlugin">
         <dependency>org.nsys.daemon:scheduler</dependency>
     </management-agent>
-
-    <!-- Main Navigation [BEGIN] -->
-
-    <navigation-section key="ucw-portal-tutorial_nav-main_demo" name="UCW Demo"
-                        location="system.top.navigation.bar/ucw.demo" weight="1000">
-        <label>UCW Demo</label>
-        <description>UCW Demo Examples</description>
-    </navigation-section>
-
-    <navigation-item key="ucw-helloworld_nav-main_helloworld" name="UCW Hello World"
-                     section="system.top.navigation.bar/ucw.demo" weight="0">
-        <label>UCW Hello World</label>
-        <link>/ucw-helloworld/page</link>
-        <conditions>
-            <condition class="org.nsys.portal.conditions.UserIsLoggedInCondition" />
-        </conditions>
-    </navigation-item>
-
-    <!-- Main Navigation [END] -->
-
-    <!-- Navigation 'ucw.tutorial.helloworld.header.actions' [BEGIN] -->
-
-    <navigation-section key="ucw-helloworld_helloworld-header-actions" name="UCW Hello World Header Actions"
-                        location="ucw.tutorial.helloworld.header.actions" weight="0">
-        <label>Hello World Header Actions</label>
-    </navigation-section>
-
-    <navigation-item key="ucw-helloworld_helloworld-header-actions_mgmt" name="UCW Hello World"
-                     section="ucw.tutorial.helloworld.header.actions" weight="0">
-        <label>Show Hello World</label>
-        <link>/ucw-helloworld/page</link>
-    </navigation-item>
-
-    <navigation-item key="ucw-helloworld_helloworld-header-actions_admin" name="UCW Portal Administration"
-                     section="ucw.tutorial.helloworld.header.actions" weight="0">
-        <label>Administration</label>
-        <link>/admin</link>
-    </navigation-item>
-
-    <!-- Navigation 'ucw.tutorial.helloworld.header.actions' [END] -->
-
-    <!-- UCW Hello World Web Resources [BEGIN] -->
-
-    <portal-resource key="ucw-helloworld_page-resources" name="UCW Hello World Page Web Resources">
-        <context>ucw.helloworld.page</context>
-        <resource type="download" name="helloworld-page.js" location="/resources/js/helloworld-page.js" />
-    </portal-resource>
-
-    <!-- UCW Hello World Web Resources [END] -->
 
 </nsys-plugin>

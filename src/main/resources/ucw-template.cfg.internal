@@ -1,0 +1,2 @@
+# Internal configuration file for ucw-template
+ucw.template.version=${build.number}
