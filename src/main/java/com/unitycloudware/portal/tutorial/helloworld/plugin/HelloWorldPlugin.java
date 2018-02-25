@@ -23,7 +23,7 @@ import com.unitycloudware.portal.tutorial.helloworld.HelloWorldConfig;
 public class HelloWorldPlugin extends AbstractManagementAgentPlugin {
 
     public static final String PORTAL_REDIRECT = "nsys.portal.redirect";
-    public static final String PORTAL_REDIRECT_DEFAULT = "/admin";
+    public static final String PORTAL_REDIRECT_DEFAULT = "/ucw-helloworld";
 
     @Override
     public void load(final PluginContext context) {
