@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.nsys.portal.controller.AbstractPortalController;
 
 /**
- * HelloWorldController
+ * Hello World Controller
  *
  * @author Jonáš Václavek <vaclavek@unitycloudware.com>
  * @see <a href="http://unitycloudware.com">Unity{Cloud}Ware</a>
@@ -27,7 +27,19 @@ public class HelloWorldController extends AbstractPortalController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView showPage(final HttpServletRequest request, final HttpServletResponse response) {
+
         Map<String, Object> context = new HashMap<>();
+        String msg = "Greetings from UCW Hello World!";
+        context.put("msg", msg);
+
+        setDisplayName("UCW Hello World");
+        setHeaderDisplayable(true);
+
+        String imageUri = getResourceUrl("/resources/images/ucw_logo.png", request);
+        showHeader(imageUri, null, null);
+
+        showHeader(imageUri, "ucw.tutorial.helloworld.header.actions", null);
+
         return render("/templates/helloworld-page.vm", context, request, response);
     }
 }

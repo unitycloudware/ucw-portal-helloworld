@@ -19,9 +19,34 @@
 
     <!-- Main Navigation [BEGIN] -->
 
+    <navigation-section key="ucw-portal-tutorial_nav-main_demo" name="UCW Demo"
+                        location="system.top.navigation.bar/ucw.demo" weight="1000">
+        <label>UCW Demo</label>
+        <description>UCW Demo Examples</description>
+    </navigation-section>
+
+    <navigation-item key="ucw-helloworld_nav-main_helloworld" name="UCW Hello World" section="system.top.navigation.bar/ucw.demo" weight="0">
+        <label>UCW Hello World</label>
+        <link>/ucw-helloworld</link>
+        <conditions>
+            <condition class="org.nsys.portal.conditions.UserIsLoggedInCondition" />
+        </conditions>
+    </navigation-item>
+
     <!-- Main Navigation [END] -->
 
     <!-- Navigation 'ucw.tutorial.helloworld.header.actions' [BEGIN] -->
+
+    <navigation-section key="ucw-helloworld_helloworld-header-actions" name="UCW Hello World Header Actions"
+                        location="ucw.tutorial.helloworld.header.actions" weight="0">
+        <label>Hello World Header Actions</label>
+    </navigation-section>
+
+    <navigation-item key="ucw-helloworld_helloworld-header-actions_mgmt" name="UCW Hello World"
+                     section="ucw.tutorial.helloworld.header.actions" weight="0">
+        <label>Show Hello World</label>
+        <link>/ucw-helloworld</link>
+    </navigation-item>
 
     <!-- Navigation 'ucw.tutorial.helloworld.header.actions' [END] -->
 
